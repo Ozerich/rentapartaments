@@ -1,0 +1,14 @@
+.size(@width,@height) {
+    width: @width;
+    height: @height;
+}
+.alignTo(@align){
+    text-align: @align;
+}
+.new-line() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}

@@ -1,0 +1,129 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@media screen and (max-width: 991px) {
+    .container {
+        section[role="main"] {
+            main{
+                .filter-by-room{
+                    .filter-by-room__container-items{
+                        display: grid;
+                        align-items: center;
+                        grid-template-columns: repeat(3,1fr);
+                        grid-template-rows: repeat(2,1fr);
+                        padding-bottom: @defaultGutter;
+                        p{
+                            &.filter-container-by-room__item{
+                                input{
+                                    &:checked + label{
+                                        border: none;
+                                        border-bottom: 2px solid @checkedFilterItemBorderTop;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .filter-container-by-room__result{
+                        .result__items{
+                            grid-template-columns: repeat(2,1fr);
+                        }
+                    }
+                }
+                .filter-by-price{
+                    .filter-by-price__result{
+                        .result__items{
+                            grid-template-columns: repeat(2,1fr);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    div[role="presentation"]{
+
+        .edit-dialog-container__modal{
+            width: 70%;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .container {
+        section[role="main"] {
+            main{
+                .filter-by-room{
+                    .filter-container-by-room__result{
+                        .result__items{
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                }
+                .filter-by-price{
+                    .filter-by-price__result{
+                        .result__items{
+                            grid-template-columns: 1fr;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    div[role="presentation"]{
+
+        .edit-dialog-container__modal{
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        section[role="main"] {
+            main{
+
+                .filter-by-price{
+                    .filter-by-price__slider-container{
+                        padding-left: @defaultGutter*2;
+                        padding-right: @defaultGutter*2;
+                    }
+                }
+            }
+        }
+    }
+    div[role="presentation"]{
+
+        .edit-dialog-container__modal{
+            width: 100%;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .container {
+        section[role="main"] {
+            main{
+                .filter-by-room{
+                    .filter-by-room__container-items{
+                        grid-template-columns: repeat(2,1fr);
+                        grid-template-rows: repeat(3,1fr);
+                        p{
+                            &.filter-container-by-room__item{
+                                input{
+                                    &:checked + label{
+                                        border: none;
+                                        border-bottom: 2px solid @checkedFilterItemBorderTop;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
